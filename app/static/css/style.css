@@ -1,0 +1,436 @@
+:root {
+    --fundo: #f8f1e7;
+    --cartao: #ffffff;
+    --texto: #3b2a20;
+    --texto-suave: #7a6656;
+    --destaque: #a0522d;
+    --topo: #4b2e1e;
+    --borda: #e6d6c3;
+}
+
+body.escuro {
+    --fundo: #1e1713;
+    --cartao: #2b211b;
+    --texto: #f1e6da;
+    --texto-suave: #bfae9e;
+    --destaque: #e0a46b;
+    --topo: #120d0a;
+    --borda: #3d3028;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cabeçalho */
+.topo {
+    background-color: var(--topo);
+    color: #f8f1e7;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.topo h1 {
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+}
+
+.topo h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.slogan {
+    font-style: italic;
+    opacity: 0.85;
+    margin-top: 0.3rem;
+}
+
+.btn-tema {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    color: #f8f1e7;
+    border: 1px solid #f8f1e7;
+    border-radius: 20px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+}
+
+.btn-tema:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Filtros */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1.5rem 1rem 0.5rem;
+}
+
+.filtro {
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem;
+    border: 2px solid var(--destaque);
+    border-radius: 25px;
+    background-color: transparent;
+    color: var(--destaque);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filtro:hover,
+.filtro.ativo {
+    background-color: var(--destaque);
+    color: var(--cartao);
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+    font-family: Arial, sans-serif;
+}
+
+.menu a {
+    color: #f8f1e7;
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+    border-bottom-color: #e0a46b;
+}
+
+.conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Introdução e botões */
+.intro {
+    text-align: center;
+    padding: 2rem 1rem 0.5rem;
+}
+
+.intro h2 {
+    color: var(--destaque);
+    font-size: 1.8rem;
+}
+
+.intro p {
+    font-family: Arial, sans-serif;
+    color: var(--texto-suave);
+    max-width: 640px;
+    margin: 0.5rem auto 1.2rem;
+}
+
+.btn-principal,
+.btn-secundario {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.15s;
+}
+
+.btn-principal {
+    background-color: var(--destaque);
+    color: var(--cartao);
+    border: none;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--texto-suave);
+    border: 1px solid var(--borda);
+}
+
+.btn-principal:hover,
+.btn-secundario:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Aviso de sucesso */
+.aviso {
+    margin: 1.5rem auto 0;
+    max-width: 600px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #e3f1df;
+    color: #2f5d27;
+    border: 1px solid #b9dbb0;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    transition: opacity 0.6s;
+}
+
+.aviso.sumindo {
+    opacity: 0;
+}
+
+/* Cardápio */
+.cardapio {
+    padding: 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.categoria {
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.categoria.oculta {
+    display: none;
+}
+
+.categoria h2 {
+    color: var(--destaque);
+    font-size: 1.5rem;
+    border-bottom: 2px dashed var(--borda);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.itens {
+    list-style: none;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item h3 {
+    font-size: 1.1rem;
+}
+
+.item p {
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.contador {
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    background-color: var(--destaque);
+    color: var(--cartao);
+    border-radius: 12px;
+    padding: 0.1rem 0.6rem;
+    vertical-align: middle;
+}
+
+.vazio {
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    color: var(--texto-suave);
+}
+
+.item-acoes {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.form-excluir {
+    display: inline;
+}
+
+.btn-acao {
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid var(--borda);
+    background-color: transparent;
+    color: var(--texto-suave);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-acao.editar:hover {
+    border-color: var(--destaque);
+    color: var(--destaque);
+}
+
+.btn-acao.excluir:hover {
+    border-color: #c0392b;
+    color: #c0392b;
+}
+
+.preco {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: var(--destaque);
+    white-space: nowrap;
+}
+
+/* Formulário */
+.painel-form {
+    max-width: 620px;
+    margin: 2rem auto;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.painel-form h2 {
+    color: var(--destaque);
+}
+
+.dica {
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+    margin-bottom: 1rem;
+}
+
+#form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-item label {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+#form-item input,
+#form-item select,
+#form-item textarea {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+#form-item input:focus,
+#form-item select:focus,
+#form-item textarea:focus {
+    outline: 2px solid var(--destaque);
+    border-color: transparent;
+}
+
+#form-item .invalido {
+    border: 2px solid #c0392b;
+    background-color: #fdecea;
+    color: #3b2a20;
+}
+
+.contagem {
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+    text-align: right;
+}
+
+.acoes-form {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.erros {
+    display: none;
+    font-family: Arial, sans-serif;
+    background-color: #fdecea;
+    color: #8e2b20;
+    border: 1px solid #f5b7b1;
+    border-radius: 8px;
+    padding: 0.8rem 1rem 0.8rem 2rem;
+}
+
+.erros.visivel {
+    display: block;
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+    border-top: 1px solid var(--borda);
+    margin-top: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cardapio {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .topo h1 {
+        font-size: 1.9rem;
+    }
+
+    .btn-tema {
+        position: static;
+        margin-top: 1rem;
+    }
+
+    .conteudo {
+        padding: 0 1rem;
+    }
+
+    .painel-form {
+        padding: 1.2rem;
+    }
+
+    .acoes-form {
+        flex-direction: column;
+    }
+
+    .acoes-form a,
+    .acoes-form button {
+        text-align: center;
+    }
+}

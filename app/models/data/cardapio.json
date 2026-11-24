@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "nome": "Espresso",
+        "categoria": "cafes",
+        "descricao": "Dose curta e intensa de grãos arábica do Sul de Minas, com notas de chocolate amargo.",
+        "preco": 6.5
+    },
+    {
+        "id": 2,
+        "nome": "Cappuccino",
+        "categoria": "cafes",
+        "descricao": "Espresso, leite vaporizado e espuma cremosa, finalizado com canela em pó.",
+        "preco": 11.0
+    },
+    {
+        "id": 3,
+        "nome": "Coado no V60",
+        "categoria": "cafes",
+        "descricao": "Café filtrado na hora, em método manual, que realça a acidez e as notas frutadas do grão.",
+        "preco": 10.0
+    },
+    {
+        "id": 4,
+        "nome": "Cold Brew",
+        "categoria": "gelados",
+        "descricao": "Café extraído a frio por 18 horas, servido com gelo. Leve, adocicado e pouco ácido.",
+        "preco": 12.0
+    },
+    {
+        "id": 5,
+        "nome": "Frappé de Caramelo",
+        "categoria": "gelados",
+        "descricao": "Café batido com gelo, leite e calda de caramelo salgado, coberto com chantilly.",
+        "preco": 16.0
+    },
+    {
+        "id": 6,
+        "nome": "Bolo de Cenoura com Chocolate",
+        "categoria": "doces",
+        "descricao": "Fatia generosa de bolo fofinho com cobertura de brigadeiro feita na casa.",
+        "preco": 9.5
+    },
+    {
+        "id": 7,
+        "nome": "Croissant de Amêndoas",
+        "categoria": "doces",
+        "descricao": "Massa folhada amanteigada recheada com creme de amêndoas e lâminas tostadas.",
+        "preco": 12.0
+    },
+    {
+        "id": 8,
+        "nome": "Pão de Queijo (porção com 6)",
+        "categoria": "salgados",
+        "descricao": "Receita mineira tradicional com queijo canastra, servido quentinho.",
+        "preco": 10.0
+    },
+    {
+        "id": 9,
+        "nome": "Quiche de Alho-Poró",
+        "categoria": "salgados",
+        "descricao": "Massa amanteigada com recheio cremoso de alho-poró e queijo gruyère.",
+        "preco": 15.5
+    }
+]
